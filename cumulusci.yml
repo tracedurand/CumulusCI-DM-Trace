@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '3.47.0'
+project:
+    name: CumulusCI-DM-Trace
+    package:
+        name: CumulusCI-DM-Trace
+        api_version: '52.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/CumulusCI-DM-Trace/tests
+            options:
+                outputdir: robot/CumulusCI-DM-Trace/results
+
+    robot_testdoc:
+        options:
+            path: robot/CumulusCI-DM-Trace/tests
+            output: robot/CumulusCI-DM-Trace/doc/CumulusCI-DM-Trace_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
